@@ -1,0 +1,99 @@
+.main {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2)), url('../assets/background.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.content {
+    height: auto;
+    width: 400px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.arrow {
+    width: 100%;
+}
+
+.title h2{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.changer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.changer a {
+    font-weight: bold;
+    color: rgb(18, 152, 235);
+}
+
+.form input,
+.form button {
+    font-size: 15px;
+    height: 40px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+.form input {
+    background-color: rgb(235, 235, 235);
+    text-indent: 10px;
+    margin-top: 5px;
+}
+
+.form button {
+    margin-top: 30px;
+    background-color: rgb(18, 152, 235);
+    color: white;
+}
+
+.form button:disabled {
+    background-color: rgb(86, 164, 213);
+}
+
+.form button:enabled:hover {
+    background-color: rgb(14, 138, 214);
+}
+
+.form input:focus {
+    outline: none;
+}
+
+.errorMsg {
+    background-color: rgb(237, 90, 90);
+    border: 2px solid rgb(193, 45, 45);
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.successMsg {
+    background-color: rgb(16, 172, 5);
+    border: 2px solid rgb(2, 82, 14);
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
