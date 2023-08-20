@@ -2,15 +2,16 @@ import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
-import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
 import path from "path";
 
+import dotenv from "dotenv";
+dotenv.config();
+
 import corsOptions from "./config/CorsOptions";
 import authRoutes from "./routes/AuthRoutes";
 
-dotenv.config();
 const app = express();
 
 app.use(helmet());
