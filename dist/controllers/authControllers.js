@@ -16,6 +16,7 @@ exports.CheckToken = exports.Login = exports.Register = void 0;
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const UserModel_1 = __importDefault(require("../models/UserModel"));
+const Constants_1 = require("../config/Constants");
 function Register(request, response) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -26,14 +27,14 @@ function Register(request, response) {
                 const hashPassword = yield bcrypt_1.default.hash(password, 10);
                 const User = new UserModel_1.default({ username, email, password: hashPassword });
                 yield User.save();
-                return response.status(200).send("We have sent you a verify email");
+                return response.status(200).send(Constants_1.REGISTER_SUCCESS);
             }
             else {
-                return response.status(400).send("Username or email already registered");
+                return response.status(400).send(Constants_1.REGISTER_FAILURE);
             }
         }
         catch (error) {
-            return response.status(500).send("Error registering, please try later");
+            return response.status(500).send(Constants_1.REGISTER_ERROR);
         }
     });
 }
@@ -48,11 +49,11 @@ function Login(request, response) {
                 return response.status(200).send(token);
             }
             else {
-                return response.status(400).send('Incorrect email or password');
+                return response.status(400).send(Constants_1.LOGIN_FAILURE);
             }
         }
         catch (error) {
-            return response.status(500).send('Error logging in, please try later');
+            return response.status(500).send(Constants_1.LOGIN_ERROR);
         }
     });
 }

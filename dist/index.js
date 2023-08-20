@@ -28,4 +28,4 @@ app.use("/auth", AuthRoutes_1.default);
 const PORT = process.env.PORT || 5000;
 mongoose_1.default.connect((_a = process.env.DB) !== null && _a !== void 0 ? _a : "")
     .then(() => app.listen(PORT, () => console.log(`Database and server running on port ${PORT}`)))
-    .catch((error) => console.error("Error connecting to MongoDB:", error));
+    .catch((error) => console.error("Error connecting to database: ", error));
